@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "170588061910",
+    "project_id": "appfood-6ca6e",
+    "storage_bucket": "appfood-6ca6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170588061910:android:200ffccc203e9e600ac977",
+        "android_client_info": {
+          "package_name": "com.sibaamap.app_food"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170588061910-i4b9k00tk4k5pk0fd00imq5j55sv5qor.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sibaamap.app_food",
+            "certificate_hash": "d99f15138db0258e36fe2af3e56b06e3e6c688f4"
+          }
+        },
+        {
+          "client_id": "170588061910-76eap2lo443ek7494ulvbi69ithq0060.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4unrdhIEXJeZlzjNveem1v1YzFYQR1Bg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170588061910-76eap2lo443ek7494ulvbi69ithq0060.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

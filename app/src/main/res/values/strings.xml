@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">App Food</string>
+    <string name="welcomeApp">Find the most delicious food with the best quality and free delivery here</string>
+
+    <string name="first_slide">All your favorite</string>
+    <string name="second_slide">Free delivery offers</string>
+    <string name="third_slide">Choose your food</string>
+
+    <string name="description">Order from the best local restaurants with easy, on-demand delivery.</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_dailyMeal">Daily Meal</string>
+    <string name="nav_favorite">Favourite</string>
+    <string name="nav_cart">My cart</string>
+    <string name="nav_logout">Logout</string>
+
+    <string name="nav_drawer_open">Open navigation drawer</string>
+    <string name="nav_drawer_close">Close navigation drawer</string>
+</resources>
