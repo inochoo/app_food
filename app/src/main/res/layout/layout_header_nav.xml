@@ -7,11 +7,13 @@
     android:orientation="vertical"
     android:background="@color/purple_500">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatar"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/avatar"/>
     <TextView
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="App Food"
@@ -20,6 +22,7 @@
         android:layout_marginTop="8dp"
         android:textColor="@color/white"/>
     <TextView
+        android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="huyanhkute2510@gmail.com"

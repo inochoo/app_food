@@ -12,6 +12,7 @@
     <string name="nav_dailyMeal">Daily Meal</string>
     <string name="nav_favorite">Favourite</string>
     <string name="nav_cart">My cart</string>
+    <string name="nav_my">My Profile</string>
     <string name="nav_logout">Logout</string>
 
     <string name="nav_drawer_open">Open navigation drawer</string>

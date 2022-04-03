@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegistrationApp extends AppCompatActivity {
 
-    private EditText edtEmail,edtPassword;
+    private EditText edtEmail,edtPassword,edtName;
     private Button btnRegister;
     private ProgressDialog progressDialog;
 
@@ -44,6 +44,7 @@ public class RegistrationApp extends AppCompatActivity {
         //startActivity(new Intent(RegistrationApp.this,IntroActivity.class));
         String strEmail = edtEmail.getText().toString().trim();
         String strPassword = edtPassword.getText().toString().trim();
+        String strName = edtName.getText().toString().trim();
 
         if(strEmail == null){
             Toast.makeText(this, "vui long nhap email", Toast.LENGTH_SHORT).show();
@@ -54,7 +55,7 @@ public class RegistrationApp extends AppCompatActivity {
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         progressDialog.show();
-        mAuth.createUserWithEmailAndPassword(strEmail, strPassword )
+        mAuth.createUserWithEmailAndPassword(strEmail, strPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -76,6 +77,7 @@ public class RegistrationApp extends AppCompatActivity {
 
     }
     private void initUi(){
+        edtName = findViewById(R.id.edt_rg_name);
         edtEmail = findViewById(R.id.edt_rg_email);
         edtPassword = findViewById(R.id.edt_rg_pass);
         btnRegister = findViewById(R.id.btn_rg_register);

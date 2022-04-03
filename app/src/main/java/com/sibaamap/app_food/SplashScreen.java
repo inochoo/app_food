@@ -31,10 +31,10 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(getApplicationContext(),welcomeApp.class);
-                startActivity(i);
+                nextActivity();
             }
         },5000);
+
 
     }
     private void nextActivity() {
@@ -43,6 +43,7 @@ public class SplashScreen extends AppCompatActivity {
             //not logged in
             Intent intent = new Intent(this, welcomeApp.class);
             startActivity(intent);
+            finish();
         }else {
             //logged
             Intent intent = new Intent(this,MainActivity.class);
