@@ -3,7 +3,6 @@
     package="com.sibaamap.app_food">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -14,19 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_food">
         <activity
-            android:name=".IntroActivity"
+            android:name=".activities.PlacedOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationApp"
+            android:name=".activities.DetailedActivity"
             android:exported="false" />
         <activity
-            android:name=".loginApp"
+            android:name=".activities.ViewAllActivity"
             android:exported="false" />
         <activity
-            android:name=".welcomeApp"
+            android:name=".activities.SeeAllActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".activities.IntroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegistrationApp"
+            android:exported="false" />
+        <activity
+            android:name=".activities.loginApp"
+            android:exported="false" />
+        <activity
+            android:name=".activities.welcomeApp"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +48,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>

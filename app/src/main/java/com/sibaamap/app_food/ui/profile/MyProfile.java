@@ -21,11 +21,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.sibaamap.app_food.MainActivity;
 import com.sibaamap.app_food.R;
 
@@ -40,13 +46,12 @@ public class MyProfile extends Fragment {
 
     private Uri mUri;
 
-
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_myprofile,container,false);
+
+
 
         initUi();
         mMainActivity = (MainActivity) getActivity();
@@ -122,6 +127,7 @@ public class MyProfile extends Fragment {
     }
 
     private void onClickUpdateProfile(){
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user == null){
             return;
@@ -143,6 +149,7 @@ public class MyProfile extends Fragment {
                         }
                     }
                 });
+
     }
 
 }

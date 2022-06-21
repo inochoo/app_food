@@ -2,31 +2,27 @@ package com.sibaamap.app_food;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultCaller;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ShareCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +30,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.sibaamap.app_food.activities.loginApp;
 import com.sibaamap.app_food.ui.cart.CartFragment;
 import com.sibaamap.app_food.ui.galley.DailyMealFragment;
 import com.sibaamap.app_food.ui.home.HomeFragment;
@@ -41,7 +38,6 @@ import com.sibaamap.app_food.ui.profile.MyProfile;
 import com.sibaamap.app_food.ui.slideshow.FavouriteFragment;
 
 import java.io.IOException;
-import java.security.Signature;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -56,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private ImageView imgAvatar;
     private TextView tvEmail,tvName;
+
+    private RatingBar ratFood;
 
     final private ActivityResultLauncher<Intent> mActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
@@ -87,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Init();
 
         getWindow().setStatusBarColor(getColor(R.color.purple_500));
@@ -109,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         showUserInformation();
     }
     private void Init(){
+
         mNavigationView = findViewById(R.id.navigation_view);
         imgAvatar = mNavigationView.getHeaderView(0).findViewById(R.id.img_avatar);
         tvName = mNavigationView.getHeaderView(0).findViewById(R.id.tv_name);
@@ -129,13 +127,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 replaceFragment( new DailyMealFragment());
                 mCurrentFragment = FRAGMENT_DAILYMEAL;
             }
-
-        }else if(id == R.id.nav_favorite){
-            if(mCurrentFragment != FRAGMENT_FAVOURITE){
-                replaceFragment( new FavouriteFragment());
-                mCurrentFragment = FRAGMENT_FAVOURITE;
-            }
-
         }else if(id == R.id.nav_cart){
             if(mCurrentFragment != FRAGMENT_CART){
                 replaceFragment( new CartFragment());
@@ -218,4 +209,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mActivityResultLauncher.launch(Intent.createChooser(intent, "Select Picture"));
 
     }
+
+
 }
